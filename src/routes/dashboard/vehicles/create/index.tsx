@@ -63,7 +63,7 @@ function CreateVehiclePage() {
                 </ul>
 
                 <Button
-                  className="w-full group/btn bg-secondary hover:bg-secondary/80 text-foreground"
+                  className="w-full group/btn bg-primary hover:bg-primary/80 text-foreground"
                   size="lg"
                   onClick={() =>
                     navigate({ to: "/dashboard/vehicles/create/manual" })
@@ -98,19 +98,19 @@ function CreateVehiclePage() {
 
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-start gap-3">
-                    <Zap className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                    <Zap className="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" />
                     <span className="text-sm text-foreground">
                       Auto-fill vehicle details from documents or images
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <Zap className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                    <Zap className="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" />
                     <span className="text-sm text-foreground">
                       Get AI-powered recommendations for missing fields
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <Zap className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                    <Zap className="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" />
                     <span className="text-sm text-foreground">
                       Save time by reducing repetitive data entry
                     </span>

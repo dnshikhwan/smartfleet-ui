@@ -13,6 +13,7 @@ import { useMutation } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { Link, useNavigate } from "@tanstack/react-router";
+import logo from "../assets/images/logo.png";
 
 type LoginInput = {
   email: string;
@@ -60,6 +61,7 @@ export default function LoginForm({
 
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
+      <img src={logo} alt="logo" className="w-32 mx-auto" />
       <Card>
         <CardHeader>
           <CardTitle>Login to your account</CardTitle>

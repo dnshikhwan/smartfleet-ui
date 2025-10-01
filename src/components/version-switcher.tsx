@@ -37,8 +37,7 @@ export function VersionSwitcher({
                 <TruckIcon className="size-4" />
               </div>
               <div className="flex flex-col gap-0.5 leading-none">
-                <span className="font-medium">SmartFleet</span>
-                <span className="">v{selectedVersion}</span>
+                <span className="font-medium">OptiTruck</span>
               </div>
               <ChevronsUpDown className="ml-auto" />
             </SidebarMenuButton>
