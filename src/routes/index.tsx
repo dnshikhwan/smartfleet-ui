@@ -1,20 +1,22 @@
-import { Button } from "@/components/ui/button";
-import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { Features } from "@/components/landing/features";
+import { Footer } from "@/components/landing/footer";
+import { Hero } from "@/components/landing/hero";
+import { Navbar } from "@/components/landing/navbar";
+import { Pricing } from "@/components/landing/pricing";
+import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
   component: App,
 });
 
 function App() {
-  const navigate = useNavigate();
   return (
-    <div className="container mx-auto h-screen flex justify-center items-center">
-      <div className="flex gap-2">
-        <Button onClick={() => navigate({ to: "/auth/login" })}>Login</Button>
-        <Button onClick={() => navigate({ to: "/auth/signup" })}>
-          Sign up
-        </Button>
-      </div>
-    </div>
+    <main className="min-h-screen">
+      <Navbar />
+      <Hero />
+      <Features />
+      <Pricing />
+      <Footer />
+    </main>
   );
 }
