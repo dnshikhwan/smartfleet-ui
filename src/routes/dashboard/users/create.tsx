@@ -24,6 +24,7 @@ type CreateUserInput = {
   name: string;
   password: string;
   email: string;
+  phone: string;
   role: "admin" | "dispatcher" | "driver";
 };
 
@@ -125,6 +126,15 @@ function CreateUserPage() {
                       required
                       autoComplete="new-password"
                       {...register("password", { required: true })}
+                    />
+                  </div>
+                  <div className="grid gap-3">
+                    <Label>Phone</Label>
+                    <Input
+                      type="tel"
+                      id="phone"
+                      required
+                      {...register("phone", { required: true })}
                     />
                   </div>
                   <div className="grid gap-3">

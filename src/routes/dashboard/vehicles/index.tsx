@@ -1,3 +1,4 @@
+import { VehicleStatusChart } from "@/components/charts/vehicles/status-chart";
 import DashboardLayout from "@/components/dashboard-layout";
 import { Loading } from "@/components/loading";
 import {
@@ -8,6 +9,7 @@ import {
 } from "@/components/stats-card";
 import VehicleTable from "@/components/tables/vehicles/vehicle-table";
 import { Button } from "@/components/ui/button";
+
 import { useQuery } from "@tanstack/react-query";
 
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
@@ -102,6 +104,9 @@ function VehiclePage() {
           value={total_maintenance_vehicles?.count}
           trend={{ value: "+12.5%", isPositive: true }}
         />
+      </div>
+      <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-3">
+        <VehicleStatusChart />
       </div>
       <div className="w-full">
         <VehicleTable />

@@ -14,6 +14,7 @@ import { Route as AuthSignupRouteImport } from './routes/auth/signup'
 import { Route as AuthLoginRouteImport } from './routes/auth/login'
 import { Route as DashboardVehiclesIndexRouteImport } from './routes/dashboard/vehicles/index'
 import { Route as DashboardUsersIndexRouteImport } from './routes/dashboard/users/index'
+import { Route as DashboardVehiclesVehicleIdRouteImport } from './routes/dashboard/vehicles/$vehicleId'
 import { Route as DashboardUsersCreateRouteImport } from './routes/dashboard/users/create'
 import { Route as DashboardVehiclesCreateIndexRouteImport } from './routes/dashboard/vehicles/create/index'
 import { Route as DashboardVehiclesEditVehicleIdRouteImport } from './routes/dashboard/vehicles/edit/$vehicleId'
@@ -44,6 +45,12 @@ const DashboardUsersIndexRoute = DashboardUsersIndexRouteImport.update({
   path: '/dashboard/users/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DashboardVehiclesVehicleIdRoute =
+  DashboardVehiclesVehicleIdRouteImport.update({
+    id: '/dashboard/vehicles/$vehicleId',
+    path: '/dashboard/vehicles/$vehicleId',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const DashboardUsersCreateRoute = DashboardUsersCreateRouteImport.update({
   id: '/dashboard/users/create',
   path: '/dashboard/users/create',
@@ -73,6 +80,7 @@ export interface FileRoutesByFullPath {
   '/auth/login': typeof AuthLoginRoute
   '/auth/signup': typeof AuthSignupRoute
   '/dashboard/users/create': typeof DashboardUsersCreateRoute
+  '/dashboard/vehicles/$vehicleId': typeof DashboardVehiclesVehicleIdRoute
   '/dashboard/users': typeof DashboardUsersIndexRoute
   '/dashboard/vehicles': typeof DashboardVehiclesIndexRoute
   '/dashboard/vehicles/create/manual': typeof DashboardVehiclesCreateManualRoute
@@ -84,6 +92,7 @@ export interface FileRoutesByTo {
   '/auth/login': typeof AuthLoginRoute
   '/auth/signup': typeof AuthSignupRoute
   '/dashboard/users/create': typeof DashboardUsersCreateRoute
+  '/dashboard/vehicles/$vehicleId': typeof DashboardVehiclesVehicleIdRoute
   '/dashboard/users': typeof DashboardUsersIndexRoute
   '/dashboard/vehicles': typeof DashboardVehiclesIndexRoute
   '/dashboard/vehicles/create/manual': typeof DashboardVehiclesCreateManualRoute
@@ -96,6 +105,7 @@ export interface FileRoutesById {
   '/auth/login': typeof AuthLoginRoute
   '/auth/signup': typeof AuthSignupRoute
   '/dashboard/users/create': typeof DashboardUsersCreateRoute
+  '/dashboard/vehicles/$vehicleId': typeof DashboardVehiclesVehicleIdRoute
   '/dashboard/users/': typeof DashboardUsersIndexRoute
   '/dashboard/vehicles/': typeof DashboardVehiclesIndexRoute
   '/dashboard/vehicles/create/manual': typeof DashboardVehiclesCreateManualRoute
@@ -109,6 +119,7 @@ export interface FileRouteTypes {
     | '/auth/login'
     | '/auth/signup'
     | '/dashboard/users/create'
+    | '/dashboard/vehicles/$vehicleId'
     | '/dashboard/users'
     | '/dashboard/vehicles'
     | '/dashboard/vehicles/create/manual'
@@ -120,6 +131,7 @@ export interface FileRouteTypes {
     | '/auth/login'
     | '/auth/signup'
     | '/dashboard/users/create'
+    | '/dashboard/vehicles/$vehicleId'
     | '/dashboard/users'
     | '/dashboard/vehicles'
     | '/dashboard/vehicles/create/manual'
@@ -131,6 +143,7 @@ export interface FileRouteTypes {
     | '/auth/login'
     | '/auth/signup'
     | '/dashboard/users/create'
+    | '/dashboard/vehicles/$vehicleId'
     | '/dashboard/users/'
     | '/dashboard/vehicles/'
     | '/dashboard/vehicles/create/manual'
@@ -143,6 +156,7 @@ export interface RootRouteChildren {
   AuthLoginRoute: typeof AuthLoginRoute
   AuthSignupRoute: typeof AuthSignupRoute
   DashboardUsersCreateRoute: typeof DashboardUsersCreateRoute
+  DashboardVehiclesVehicleIdRoute: typeof DashboardVehiclesVehicleIdRoute
   DashboardUsersIndexRoute: typeof DashboardUsersIndexRoute
   DashboardVehiclesIndexRoute: typeof DashboardVehiclesIndexRoute
   DashboardVehiclesCreateManualRoute: typeof DashboardVehiclesCreateManualRoute
@@ -187,6 +201,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardUsersIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/dashboard/vehicles/$vehicleId': {
+      id: '/dashboard/vehicles/$vehicleId'
+      path: '/dashboard/vehicles/$vehicleId'
+      fullPath: '/dashboard/vehicles/$vehicleId'
+      preLoaderRoute: typeof DashboardVehiclesVehicleIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/dashboard/users/create': {
       id: '/dashboard/users/create'
       path: '/dashboard/users/create'
@@ -223,6 +244,7 @@ const rootRouteChildren: RootRouteChildren = {
   AuthLoginRoute: AuthLoginRoute,
   AuthSignupRoute: AuthSignupRoute,
   DashboardUsersCreateRoute: DashboardUsersCreateRoute,
+  DashboardVehiclesVehicleIdRoute: DashboardVehiclesVehicleIdRoute,
   DashboardUsersIndexRoute: DashboardUsersIndexRoute,
   DashboardVehiclesIndexRoute: DashboardVehiclesIndexRoute,
   DashboardVehiclesCreateManualRoute: DashboardVehiclesCreateManualRoute,

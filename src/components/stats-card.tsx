@@ -6,7 +6,15 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { TrendingUp, TrendingDown, Car, UserIcon } from "lucide-react";
+import {
+  TrendingUp,
+  TrendingDown,
+  UserIcon,
+  Wrench,
+  Truck,
+  Check,
+  X,
+} from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface StatsCardProps {
@@ -120,7 +128,7 @@ export function TotalVehicleStatsCard({
       value={value}
       description="Total vehicles in fleet"
       trend={trend}
-      icon={<Car className="h-5 w-5" />}
+      icon={<Truck className="h-5 w-5" />}
       className={className}
     />
   );
@@ -141,7 +149,7 @@ export function AvailableVehicleStatsCard({
       value={value}
       description="Total available vehicles in fleet"
       trend={trend}
-      icon={<Car className="h-5 w-5" />}
+      icon={<Check className="h-5 w-5" />}
       className={className}
     />
   );
@@ -162,7 +170,7 @@ export function InUseVehicleStatsCard({
       value={value}
       description="Total in use vehicles in fleet"
       trend={trend}
-      icon={<Car className="h-5 w-5" />}
+      icon={<X className="h-5 w-5" />}
       className={className}
     />
   );
@@ -183,7 +191,7 @@ export function MaintenanceVehicleStatsCard({
       value={value}
       description="Total vehicles in maintenance in fleet"
       trend={trend}
-      icon={<Car className="h-5 w-5" />}
+      icon={<Wrench className="h-5 w-5" />}
       className={className}
     />
   );
