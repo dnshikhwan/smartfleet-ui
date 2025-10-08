@@ -96,6 +96,7 @@ export default function SignUpForm({
                   type="password"
                   required
                   {...register("password", { required: true })}
+                  autoComplete="new-password"
                 />
               </div>
               <div className="flex flex-col gap-3">

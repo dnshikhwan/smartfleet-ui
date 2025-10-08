@@ -32,7 +32,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
         </header>
-        <div className="flex flex-1 flex-col gap-8 p-4">{children}</div>
+        <div className="flex flex-1 flex-col gap-8 p-5">{children}</div>
       </SidebarInset>
     </SidebarProvider>
   );

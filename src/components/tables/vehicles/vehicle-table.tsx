@@ -1,8 +1,9 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { DataTable } from "./data-table";
-import { columns } from "./columns";
+import { DataTable } from "../../ui/data-table";
 import { useQuery } from "@tanstack/react-query";
 import { Loading } from "@/components/loading";
+import { vehicleColumns } from "./columns";
+import { toast } from "sonner";
 
 async function getVehiclesData() {
   const res = await fetch("http://localhost:3000/vehicles");
@@ -45,6 +46,9 @@ export default function VehicleTable() {
         queryKey: ["total-in-use-vehicles"],
       });
     },
+    onError: () => {
+      toast.error("Error deleting vehicle");
+    },
   });
 
   const handleDelete = (vehicleId: string) => {
@@ -55,7 +59,11 @@ export default function VehicleTable() {
 
   return (
     <div className="w-full">
-      <DataTable columns={columns(handleDelete)} data={data} />
+      <DataTable
+        columns={vehicleColumns(handleDelete)}
+        data={data}
+        filterColumn="plate_number"
+      />
     </div>
   );
 }
