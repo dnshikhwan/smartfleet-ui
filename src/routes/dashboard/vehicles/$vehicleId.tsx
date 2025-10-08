@@ -2,7 +2,6 @@ import DashboardLayout from "@/components/dashboard-layout";
 import { Loading } from "@/components/loading";
 import StatusBadge from "@/components/status-badge";
 import type { Vehicle } from "@/components/tables/vehicles/columns";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
     Card,
