@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/card";
 import { useQuery } from "@tanstack/react-query";
 import { createFileRoute } from "@tanstack/react-router";
-import { Container, NotepadText } from "lucide-react";
+import { Container, NotepadText, PencilIcon, Wrench } from "lucide-react";
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
@@ -172,8 +172,12 @@ function VehicleDetailsPage() {
                     <StatusBadge status={vehicleDetail?.status || ""} />
                 </h2>
                 <div className="space-x-2">
-                    <Button variant={"outline"}>Schedule Maintenance</Button>
-                    <Button>Edit Details</Button>
+                    <Button variant={"outline"}>
+                        <Wrench /> Schedule Maintenance
+                    </Button>
+                    <Button>
+                        <PencilIcon /> Edit Details
+                    </Button>
                 </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
