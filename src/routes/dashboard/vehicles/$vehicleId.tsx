@@ -1,7 +1,9 @@
 import DashboardLayout from "@/components/dashboard-layout";
 import { Loading } from "@/components/loading";
+import StatusBadge from "@/components/status-badge";
 import type { Vehicle } from "@/components/tables/vehicles/columns";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
     Card,
     CardContent,
@@ -165,9 +167,16 @@ function VehicleDetailsPage() {
 
     return (
         <DashboardLayout>
-            <h2 className="scroll-m-20 text-2xl font-bold tracking-tight first:mt-0">
-                <Badge>{vehicleDetail?.status}</Badge> {vehicleDetail?.name}
-            </h2>
+            <div className="flex justify-between">
+                <h2 className="scroll-m-20 text-2xl font-bold tracking-tight flex items-center gap-3 first:mt-0">
+                    {vehicleDetail?.name}
+                    <StatusBadge status={vehicleDetail?.status || ""} />
+                </h2>
+                <div className="space-x-2">
+                    <Button variant={"outline"}>Schedule Maintenance</Button>
+                    <Button>Edit Details</Button>
+                </div>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                 <div className="w-full grid gap-5">
                     <Card>
